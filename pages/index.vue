@@ -5,7 +5,7 @@
     </section>
     <section class="p-index_contents">
       <div class="c-container">
-        <h2 class="p-index_contents__title">てすと2</h2>
+        <h2 class="p-index_contents__title">てすと</h2>
         <!-- <ThePostsBlock/> -->
         <ul class="c-posts_archive">
           <li class="c-post_block" v-for="(post,index) in posts" :key="index">
