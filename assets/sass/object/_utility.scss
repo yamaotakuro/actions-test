@@ -1,0 +1,259 @@
+@use '../foundation' as f;
+
+// img Centering
+.u-block_center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// text-align: left
+.u-left {
+  text-align: left;
+}
+// text-align: center
+.u-center {
+  text-align: center;
+}
+// text-align: right
+.u-right {
+  text-align: right;
+}
+
+.u-none {
+  display: none;
+}
+
+.u-ib {
+  display: inline-block;
+}
+
+.u-relative {
+  position: relative;
+}
+.u-absolute {
+  position: absolute;
+}
+
+// 余白調整用のクラス
+@for $i from 0 through 20 {
+  .u-mt#{$i * 5} {
+    margin-top: 10px * $i;
+    @include f.mq-max {
+      margin-top: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+
+  .u-mb#{$i * 5} {
+    margin-bottom: 10px * $i;
+    @include f.mq-max {
+      margin-bottom: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+
+  .u-ml#{$i * 5} {
+    margin-left: 10px * $i;
+    @include f.mq-max {
+      margin-left: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+
+  .u-mr#{$i * 5} {
+    margin-right: 10px * $i;
+    @include f.mq-max {
+      margin-right: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+
+  .u-pt#{$i * 5} {
+    padding-top: 10px * $i;
+    @include f.mq-max {
+      padding-top: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+
+  .u-pb#{$i * 5} {
+    padding-bottom: 10px * $i;
+    @include f.mq-max {
+      padding-bottom: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+
+  .u-pl#{$i * 5} {
+    padding-left: 10px * $i;
+    @include f.mq-max {
+      padding-left: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+
+  .u-pr#{$i * 5} {
+    padding-right: 10px * $i;
+    @include f.mq-max {
+      padding-right: f.smooth_size(5px * $i, 10px * $i) !important;
+    }
+  }
+}
+
+// デフォルトは表示、以下メディアクエリーで非表示
+.u-visible {
+  display: block;
+  &-max {
+    @include f.mq-max {
+      display: none !important;
+    }
+  }
+
+  &-md {
+    @include f.mq-md {
+      display: none !important;
+    }
+  }
+
+  &-tab {
+    @include f.mq-tab {
+      display: none !important;
+    }
+  }
+
+  &-sp {
+    @include f.mq-sp {
+      display: none !important;
+    }
+  }
+
+  &-spmin {
+    @include f.mq-spmin {
+      display: none !important;
+    }
+  }
+
+  &-min {
+    @include f.mq-min {
+      display: none !important;
+    }
+  }
+}
+
+// デフォルトは非表示、以下メディアクエリーで表示
+.u-hidden {
+  display: none;
+  &-max {
+    display: none !important;
+
+    @include f.mq-max {
+      display: block !important;
+
+      &.-f {
+        display: flex !important;
+      }
+
+      &.-i {
+        display: inline !important;
+      }
+
+      &.-ib {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &-md {
+    display: none !important;
+
+    @include f.mq-md {
+      display: block !important;
+
+      &.-f {
+        display: flex !important;
+      }
+
+      &.-i {
+        display: inline !important;
+      }
+
+      &.-ib {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &-tab {
+    display: none !important;
+
+    @include f.mq-tab {
+      display: block !important;
+
+      &.-f {
+        display: flex !important;
+      }
+
+      &.-i {
+        display: inline !important;
+      }
+
+      &.-ib {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &-sp {
+    display: none !important;
+
+    @include f.mq-sp {
+      display: block !important;
+
+      &.-f {
+        display: flex !important;
+      }
+
+      &.-i {
+        display: inline !important;
+      }
+
+      &.-ib {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &-spmin {
+    display: none !important;
+
+    @include f.mq-spmin {
+      display: block !important;
+
+      &.-f {
+        display: flex !important;
+      }
+
+      &.-i {
+        display: inline !important;
+      }
+
+      &.-ib {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &-min {
+    display: none !important;
+
+    @include f.mq-min {
+      display: block !important;
+
+      &.-f {
+        display: flex !important;
+      }
+
+      &.-i {
+        display: inline !important;
+      }
+
+      &.-ib {
+        display: inline-block !important;
+      }
+    }
+  }
+}

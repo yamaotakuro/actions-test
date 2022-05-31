@@ -1,0 +1,94 @@
+@use './variable' as v;
+@use './function' as f;
+@use './mixin' as m;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #fff;
+  color: v.$font_color;
+  font-family: v.$base_font;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: 'palt';
+  text-indent: f.smooth_font(0px, 0px);
+  letter-spacing: 0.05em;
+  line-height: 180%;
+  font-size: 1.6rem;
+  @include m.mq-max {
+    font-size: f.smooth_font(13px, 16px);
+  }
+}
+
+#page {
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+figure,
+picture {
+  display: block;
+}
+
+img {
+  vertical-align: bottom;
+  height: auto;
+  max-width: 100%;
+  min-height: 1px;
+}
+
+.js-svg {
+  width: 1em;
+  height: 1em;
+  @at-root img#{&} {
+    opacity: 0;
+  }
+  @at-root svg#{&} {
+    opacity: 1;
+  }
+}
+
+svg {
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+/*----------------------------------------------------
+	form要素
+--------------------------------------------------- */
+
+input,
+textarea {
+  padding: 5px 7px;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  background-color: #fff;
+  border: 1px solid #a7a6aa;
+}
+
+input[type='text'],
+textarea {
+  outline: none;
+  border: 1px solid #aaa;
+  transition: all 0.3s ease;
+}
+
+input[type='text']:focus,
+textarea:focus {
+  box-shadow: 0 0 7px #52a8ec;
+  border: 1px solid #52a8ec;
+}
