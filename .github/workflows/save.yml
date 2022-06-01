@@ -44,8 +44,8 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.3.0     # FTPデプロイ用のアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
         with:
-          server: ${{ secrets.FTP_SERVER }}       # FTPのホスト名（サーバー名やIPアドレス）
-          username: ${{ secrets.FTP_USER }}       # FTPのユーザー名
-          password: ${{ secrets.FTP_PASSWORD }}   # FTPのパスワード
+          server: sv3031.wpx.ne.jp       # FTPのホスト名（サーバー名やIPアドレス）
+          username: wp706211       # FTPのユーザー名
+          password: azks1jl8   # FTPのパスワード
           local-dir: ./dist/                      # アップロード元のパス（基本的には、npm run generate で出力されるディレクトリを指定）
-          server-dir: ${{ secrets.DEPLOY_DIR }}   # アップロード先のリモートパス
+          server-dir: /home/wp706211/static-test.com/public_html   # アップロード先のリモートパス
